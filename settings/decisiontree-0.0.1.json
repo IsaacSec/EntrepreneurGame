@@ -1,0 +1,47 @@
+{
+    "question": "Q1",
+    "optionYes": "Yes",
+    "optionNo": "No",
+    "childrenYes": [
+        {
+            "question": "Q1.1",
+            "optionYes": "Yes",
+            "optionNo": "No",
+            "childrenYes": [],
+            "childrenNo": [],
+            "effectYes": [0,0,0,0],
+            "effectNo": [0,0,0,0]
+        },
+        {
+            "question": "Q1.2",
+            "optionYes": "Yes",
+            "optionNo": "No",
+            "childrenYes": [],
+            "childrenNo": [],
+            "effectYes": [0,0,0,0],
+            "effectNo": [0,0,0,0]
+        }
+    ],
+    "childrenNo": [
+        {
+            "question": "Q1.3",
+            "optionYes": "Yes",
+            "optionNo": "No",
+            "childrenYes": [],
+            "childrenNo": [],
+            "effectYes": [0,0,0,0],
+            "effectNo": [0,0,0,0]
+        },
+        {
+            "question": "Q1.4",
+            "optionYes": "Yes",
+            "optionNo": "No",
+            "childrenYes": [],
+            "childrenNo": [],
+            "effectYes": [0,0,0,0],
+            "effectNo": [0,0,0,0]
+        }
+    ],
+    "effectYes": [0,0,0,0],
+    "effectNo": [0,0,0,0]
+}
