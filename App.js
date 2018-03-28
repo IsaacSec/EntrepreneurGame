@@ -20,6 +20,8 @@ import {
   Button
 } from 'react-native';
 
+import { DecisionTree } from './src/core/decisionTree';
+
 
 export default class App extends Component {
   
@@ -55,6 +57,8 @@ export default class App extends Component {
       <MenuView
         onPressPlay = {() => {
           this.setState( {viewId : 2} );
+          var tree = DecisionTree.loadTreeFromJSON();
+          alert("Tree built");
         }}
         onPressOptions = {() => { 
           this.setState( {viewId : 1} );

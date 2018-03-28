@@ -23,4 +23,19 @@ class DecisionNode {
 
         return branches[index];
     }
+
+    static genNodeFromJSON(json){
+
+        var node = new DecisionNode();
+
+        node.question = json.question;
+        node.optionYes = json.optionYes;
+        node.optionNo = json.childrenYes;
+        node.effectYes = json.effectYes;
+        node.effectNo = json.effectNo;
+
+        return node;
+    }
 }
+
+export {DecisionNode};
