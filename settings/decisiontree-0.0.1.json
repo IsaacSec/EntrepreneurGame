@@ -1,10 +1,12 @@
 {
     "question": "Q1",
+    "character": "C1",
     "optionYes": "Yes",
     "optionNo": "No",
     "childrenYes": [
         {
             "question": "Q1.1",
+            "character": "C2",
             "optionYes": "Yes",
             "optionNo": "No",
             "childrenYes": [],
@@ -14,6 +16,7 @@
         },
         {
             "question": "Q1.2",
+            "character": "C2",
             "optionYes": "Yes",
             "optionNo": "No",
             "childrenYes": [],
@@ -25,6 +28,7 @@
     "childrenNo": [
         {
             "question": "Q1.3",
+            "character": "C3",
             "optionYes": "Yes",
             "optionNo": "No",
             "childrenYes": [],
@@ -34,6 +38,7 @@
         },
         {
             "question": "Q1.4",
+            "character": "C3",
             "optionYes": "Yes",
             "optionNo": "No",
             "childrenYes": [],

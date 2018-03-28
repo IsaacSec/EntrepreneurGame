@@ -1,6 +1,8 @@
 class DecisionNode {
     constructor() {
+        this.id = 0;
         this.question = "none";
+        this.character = "none";
         this.optionYes = "Yes";
         this.optionNo = "No";
         this.childrenYes = [];
@@ -28,7 +30,9 @@ class DecisionNode {
 
         var node = new DecisionNode();
 
+        node.id = json.id;
         node.question = json.question;
+        node.character = json.character;
         node.optionYes = json.optionYes;
         node.optionNo = json.childrenYes;
         node.effectYes = json.effectYes;
