@@ -21,6 +21,7 @@ import {
 } from 'react-native';
 
 import { DecisionTree } from './src/core/decisionTree';
+import {DATA} from './src/Views/CardView.js'
 
 
 export default class App extends Component {
@@ -57,8 +58,6 @@ export default class App extends Component {
       <MenuView
         onPressPlay = {() => {
           this.setState( {viewId : 2} );
-          var tree = DecisionTree.loadTreeFromJSON();
-          alert("Tree built");
         }}
         onPressOptions = {() => { 
           this.setState( {viewId : 1} );
@@ -72,7 +71,14 @@ export default class App extends Component {
 
   renderCardView(){
     return (
-      <CardView/>
+      <CardView
+        onSwipeRight = {() => {
+          
+        }}
+        onSwipeLeft = {() => {
+
+        }}
+      />
     );
   }
 

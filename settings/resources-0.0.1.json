@@ -1,0 +1,16 @@
+{
+    "characters":{
+        "C1":{
+            "name": "C1",
+            "imgURL": "http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg"
+        },
+        "C2":{
+            "name": "C2",
+            "imgURL": "http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-01.jpg"
+        },
+        "C3":{
+            "name": "C3",
+            "imgURL": "http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-09.jpg"
+        }
+    }
+}
