@@ -160,7 +160,8 @@ class Deck extends Component {
                 margin,
                 backgroundColor: 'white',
                 borderRadius: 10,
-                padding: 20
+                overflow: 'hidden',
+                backgroundColor: 'gray'
               }}
               key={item.id}
               title={item.text}
@@ -169,9 +170,22 @@ class Deck extends Component {
                 style={{
                   display: 'flex',
                   flexDirection: 'row',
-                  justifyContent: 'space-between'
+                  justifyContent: 'space-between',
+                  position: 'relative',
+                  backgroundColor: 'gray'
                 }}>
-                <Animated.View style={{ opacity: this.rightOpacity }}>
+                <Image
+                  source={require('../res/images/1.png')}
+                  style={{
+                    width: width,
+                    height: width,
+                    position: 'absolute',
+                    top: 0,
+                    left: 0
+                  }}
+                />
+                <Animated.View
+                  style={{ opacity: this.rightOpacity, margin: 20 }}>
                   <Text
                     style={{
                       textAlign: 'center',
@@ -184,7 +198,8 @@ class Deck extends Component {
                     {item.leftText}
                   </Text>
                 </Animated.View>
-                <Animated.View style={{ opacity: this.leftOpacity }}>
+                <Animated.View
+                  style={{ opacity: this.leftOpacity, margin: 20 }}>
                   <Text
                     style={{
                       textAlign: 'center',

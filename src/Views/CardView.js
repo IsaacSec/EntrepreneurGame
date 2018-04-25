@@ -98,10 +98,10 @@ export default class CardView extends Component<Props> {
           style={{
             display: 'flex',
             flexDirection: 'row',
-            height: 140,
+            height: 120,
             paddingTop: 20,
             backgroundColor: '#1f2128',
-            marginBottom: 40
+            marginBottom: 30
           }}>
           <View
             style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -157,7 +157,7 @@ export default class CardView extends Component<Props> {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            marginBottom: 20
+            marginBottom: 10
           }}>
           <Text style={{ color: 'white' }}>TEXTO SUPER CHIDO</Text>
         </View>
