@@ -1,45 +1,44 @@
 class DecisionNode {
-    constructor() {
-        this.id = 0;
-        this.question = "none";
-        this.character = "none";
-        this.optionYes = "Yes";
-        this.optionNo = "No";
-        this.childrenYes = [];
-        this.childrenNo = [];
-        this.effectYes = [0,0,0,0];
-        this.effectNo = [0,0,0,0];
+  constructor() {
+    this.id = 0
+    this.question = 'none'
+    this.character = 'none'
+    this.optionYes = 'Yes'
+    this.optionNo = 'No'
+    this.childrenYes = []
+    this.childrenNo = []
+    this.effectYes = [0, 0, 0, 0]
+    this.effectNo = [0, 0, 0, 0]
+  }
+
+  getRandomChild(isYes) {
+    let branches
+
+    if (isYes === true) {
+      branches = childYes
+    } else {
+      branches = childNo
     }
 
-    getRandomChild (isYes) {
-        let branches;
-        
-        if (isYes === true) {
-            branches = childYes;     
-        } else {
-            branches = childNo;
-        }
-        
-        let max = branches.length;
-        let index = Math.floor(Math.random() * (max));
+    let max = branches.length
+    let index = Math.floor(Math.random() * max)
 
-        return branches[index];
-    }
+    return branches[index]
+  }
 
-    static genNodeFromJSON(json){
+  static genNodeFromJSON(json) {
+    var node = new DecisionNode()
 
-        var node = new DecisionNode();
+    node.id = json.id
+    node.question = json.question
+    node.character = json.character
+    node.optionYes = json.optionYes
+    node.optionNo = json.childrenYes
+    node.effectYes = json.effectYes
+    node.effectNo = json.effectNo
 
-        node.id = json.id;
-        node.question = json.question;
-        node.character = json.character;
-        node.optionYes = json.optionYes;
-        node.optionNo = json.childrenYes;
-        node.effectYes = json.effectYes;
-        node.effectNo = json.effectNo;
-
-        return node;
-    }
+    return node
+  }
 }
 
-export {DecisionNode};
+export { DecisionNode }

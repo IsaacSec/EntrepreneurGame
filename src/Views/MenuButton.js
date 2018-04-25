@@ -1,36 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   StyleSheet,
   PropTypes,
   View,
   Text,
-  TouchableHighlight,
-} from 'react-native';
+  TouchableHighlight
+} from 'react-native'
 
 export default class MenuButton extends Component {
   constructor(props) {
-    super(props);
-    this.state = { pressStatus: false };
+    super(props)
+    this.state = { pressStatus: false }
   }
-  _onHideUnderlay(){
-    this.setState({ pressStatus: false });
+  _onHideUnderlay() {
+    this.setState({ pressStatus: false })
   }
-  _onShowUnderlay(){
-    this.setState({ pressStatus: true });
+  _onShowUnderlay() {
+    this.setState({ pressStatus: true })
   }
 
-  render(){
-    const { onPress, title } = this.props;
+  render() {
+    const { onPress, title } = this.props
     return (
       <View style={styles.container}>
         <TouchableHighlight
           onPress={onPress}
           activeOpacity={1}
-          style={ this.state.pressStatus ? styles.buttonPress : styles.button }
+          style={this.state.pressStatus ? styles.buttonPress : styles.button}
           onHideUnderlay={this._onHideUnderlay.bind(this)}
-          onShowUnderlay={this._onShowUnderlay.bind(this)}
-        >
-          <Text style={ this.state.pressStatus ? styles.textPress : styles.text }>
+          onShowUnderlay={this._onShowUnderlay.bind(this)}>
+          <Text style={this.state.pressStatus ? styles.textPress : styles.text}>
             {title}
           </Text>
         </TouchableHighlight>
@@ -39,10 +38,8 @@ export default class MenuButton extends Component {
   }
 }
 
-
 const styles = StyleSheet.create({
-  container: {
-  },
+  container: {},
   text: {
     fontSize: 20,
     textAlign: 'center',
@@ -58,9 +55,9 @@ const styles = StyleSheet.create({
   },
   button: {
     elevation: 5,
-    backgroundColor: '#9ABF7F',
+    backgroundColor: '#9ABF7F'
   },
   buttonPress: {
-    backgroundColor: '#7FA678',
-  },
-});
+    backgroundColor: '#7FA678'
+  }
+})

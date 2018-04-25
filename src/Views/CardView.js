@@ -4,92 +4,187 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native'
+import React, { Component } from 'react'
+import { Platform, StyleSheet, Text, View } from 'react-native'
 import { Card, Button } from 'react-native-elements'
 import Deck from '../deck'
 
 var DATA = [
-  { id: 1, text: 'Card #1', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg' },
-  { id: 2, text: 'Card #2', uri: 'http://www.fluxdigital.co/wp-content/uploads/2015/04/Unsplash.jpg' },
-  { id: 3, text: 'Card #3', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-09.jpg' },
-  { id: 4, text: 'Card #4', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-01.jpg' },
-  { id: 5, text: 'Card #5', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg' },
-  { id: 6, text: 'Card #6', uri: 'http://www.fluxdigital.co/wp-content/uploads/2015/04/Unsplash.jpg' },
-  { id: 7, text: 'Card #7', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-09.jpg' },
-  { id: 8, text: 'Card #8', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-01.jpg' },
+  {
+    id: 1,
+    text: 'Card #1',
+    leftText: 'left text',
+    rightText: 'right text'
+  },
+  {
+    id: 2,
+    text: 'Card #2',
+    leftText: 'left text',
+    rightText: 'right text'
+  },
+  {
+    id: 3,
+    text: 'Card #3',
+    leftText: 'left text',
+    rightText: 'right text'
+  },
+  {
+    id: 4,
+    text: 'Card #4',
+    leftText: 'left text',
+    rightText: 'right text'
+  },
+  {
+    id: 5,
+    text: 'Card #5',
+    leftText: 'left text',
+    rightText: 'right text'
+  },
+  {
+    id: 6,
+    text: 'Card #6',
+    leftText: 'left text',
+    rightText: 'right text'
+  },
+  {
+    id: 7,
+    text: 'Card #7',
+    leftText: 'left text',
+    rightText: 'right text'
+  },
+  {
+    id: 8,
+    text: 'Card #8',
+    leftText: 'left text',
+    rightText: 'right text'
+  }
 ]
 
-type Props = {};
+type Props = {}
 export default class CardView extends Component<Props> {
-
-    constructor(props) {
-        super(props);
-    }
+  constructor(props) {
+    super(props)
+  }
 
   renderCard(item) {
     return (
-        <Card
-          key={item.id}
-          title={item.text}
-          image={{ uri: item.uri}}
-        >
-        <Text style= {{marginBottom:10}}>
+      <Card key={item.id} title={item.text} image={{ uri: item.uri }}>
+        <Text style={{ marginBottom: 10 }}>
           I can customize the Card further
         </Text>
-        <Button
-          icon={{name:'code'}}
-          backgroundColor='#03A9F4'
-          title= {'View Now!'}
-        >
-        </Button>
-        </Card>
+      </Card>
     )
   }
 
   renderNoMoreCards() {
     return (
-      <Card
-        title= 'Game Over!'
-      >
-      <Text style= {{ marginBottom:10, textAlign: 'center' }}>
-        Score: 89321 points
-      </Text>
-      <Button
-        icon={{name:'code'}}
-        backgroundColor='#03A9F4'
-        title= {'Try Again!'}
-      >
-      </Button>
+      <Card title="Game Over!">
+        <Text style={{ marginBottom: 10, textAlign: 'center' }}>
+          Score: 89321 points
+        </Text>
+        <Button
+          icon={{ name: 'code' }}
+          backgroundColor="#03A9F4"
+          title={'Try Again!'}
+        />
       </Card>
     )
   }
 
   render() {
     return (
-            <View style={styles.container}>
-            
-                <Deck
-                data={DATA}
-                renderCard={this.renderCard}
-                renderNoMoreCards={this.renderNoMoreCards}
-                />
-            </View>
-      
-    );
+      <View style={styles.container}>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            height: 140,
+            paddingTop: 20,
+            backgroundColor: '#1f2128',
+            marginBottom: 40
+          }}>
+          <View
+            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View
+              style={{
+                width: 40,
+                height: 40,
+                backgroundColor: 'gray',
+                marginBottom: 10
+              }}
+            />
+            <Text style={{ color: 'white', fontWeight: '700' }}>{1234}</Text>
+          </View>
+          <View
+            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View
+              style={{
+                width: 40,
+                height: 40,
+                backgroundColor: 'gray',
+                marginBottom: 10
+              }}
+            />
+            <Text style={{ color: 'white', fontWeight: '700' }}>{1234}</Text>
+          </View>
+          <View
+            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View
+              style={{
+                width: 40,
+                height: 40,
+                backgroundColor: 'gray',
+                marginBottom: 10
+              }}
+            />
+            <Text style={{ color: 'white', fontWeight: '700' }}>{1234}</Text>
+          </View>
+          <View
+            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <View
+              style={{
+                width: 40,
+                height: 40,
+                backgroundColor: 'gray',
+                marginBottom: 10
+              }}
+            />
+            <Text style={{ color: 'white', fontWeight: '700' }}>{1234}</Text>
+          </View>
+        </View>
+        <View
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginBottom: 20
+          }}>
+          <Text style={{ color: 'white' }}>TEXTO SUPER CHIDO</Text>
+        </View>
+        <View style={{ flexGrow: 1 }}>
+          <Deck data={DATA} onReset={() => {}} />
+        </View>
+        <View
+          style={{
+            backgroundColor: '#1f2128',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: 10
+          }}>
+          <Text style={{ color: 'white' }}>2018</Text>
+          <Text style={{ color: 'white' }}>FECHA</Text>
+        </View>
+      </View>
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F2F2F2',
+    backgroundColor: '#333740'
   }
-});
+})
 
-export {DATA};
+export { DATA }
