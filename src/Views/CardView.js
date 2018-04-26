@@ -11,62 +11,42 @@ import Deck from '../deck'
 
 var DATA = [
   {
-    id: 1,
+    id: 0,
     text: 'Card #1',
     leftText: 'left text',
     rightText: 'right text'
   },
   {
-    id: 2,
+    id: 1,
     text: 'Card #2',
     leftText: 'left text',
     rightText: 'right text'
   },
   {
-    id: 3,
+    id: 2,
     text: 'Card #3',
-    leftText: 'left text',
-    rightText: 'right text'
-  },
-  {
-    id: 4,
-    text: 'Card #4',
-    leftText: 'left text',
-    rightText: 'right text'
-  },
-  {
-    id: 5,
-    text: 'Card #5',
-    leftText: 'left text',
-    rightText: 'right text'
-  },
-  {
-    id: 6,
-    text: 'Card #6',
-    leftText: 'left text',
-    rightText: 'right text'
-  },
-  {
-    id: 7,
-    text: 'Card #7',
-    leftText: 'left text',
-    rightText: 'right text'
-  },
-  {
-    id: 8,
-    text: 'Card #8',
     leftText: 'left text',
     rightText: 'right text'
   }
 ]
 
+var current = DATA[0]
+
 type Props = {}
 export default class CardView extends Component<Props> {
   constructor(props) {
     super(props)
+    this.state = {
+      question: current.text
+    }
+  }
+
+  updateQuestion = () => {
+    this.setState({question: current.text})
   }
 
   renderCard(item) {
+    this.updateQuestion()
     return (
       <Card key={item.id} title={item.text} image={{ uri: item.uri }}>
         <Text style={{ marginBottom: 10 }}>
@@ -92,6 +72,8 @@ export default class CardView extends Component<Props> {
   }
 
   render() {
+    console.log("Render", current.text)
+    const { onSwipeRight, onSwipeLeft } = this.props
     return (
       <View style={styles.container}>
         <View
@@ -159,10 +141,10 @@ export default class CardView extends Component<Props> {
             alignItems: 'center',
             marginBottom: 10
           }}>
-          <Text style={{ color: 'white' }}>TEXTO SUPER CHIDO</Text>
+          <Text style={{ color: 'white' }}> {this.state.question} </Text>
         </View>
         <View style={{ flexGrow: 1 }}>
-          <Deck data={DATA} onReset={() => {}} />
+          <Deck data={DATA} onSwipeRight={onSwipeRight} onSwipeLeft={onSwipeLeft} onReset={() => {}} />
         </View>
         <View
           style={{
@@ -187,4 +169,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export { DATA }
+export { DATA, current }

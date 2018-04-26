@@ -1,0 +1,79 @@
+[
+    {
+        "id": 0,
+        "question": "¿Eres shingon?",
+        "character": "C1",
+        "optionYes": "Yes perro",
+        "optionNo": "No shavo",
+        "childrenYes": [1,2],
+        "childrenNo": [3,4],
+        "effectYes": [0,0,0,0],
+        "effectNo": [0,0,0,0]
+    },
+    {
+        "id": 1,
+        "question": "Entonces, ¿eres un perro?",
+        "character": "C2",
+        "optionYes": "Simón",
+        "optionNo": "No, fuchi",
+        "childrenYes": [0],
+        "childrenNo": [0],
+        "effectYes": [0,0,0,0],
+        "effectNo": [0,0,0,0]
+    },
+    {
+        "id": 2,
+        "question": "¿Quieres dinero por serlo?",
+        "character": "C3",
+        "optionYes": "Hazme rico",
+        "optionNo": "Tengo dignidad",
+        "childrenYes": [5],
+        "childrenNo": [6],
+        "effectYes": [0,0,0,0],
+        "effectNo": [0,0,0,0]
+    },
+    {
+        "id": 3,
+        "question": "Pero, ¿Eres humano?",
+        "character": "C3",
+        "optionYes": "Si, pero malvado",
+        "optionNo": "Nel",
+        "childrenYes": [2],
+        "childrenNo": [1],
+        "effectYes": [0,0,0,0],
+        "effectNo": [0,0,0,0]
+    },
+    {
+        "id": 4,
+        "question": "¿Te gusta el mundo?",
+        "character": "C3",
+        "optionYes": "Creo",
+        "optionNo": "Nel",
+        "childrenYes": [0],
+        "childrenNo": [0],
+        "effectYes": [0,0,0,0],
+        "effectNo": [0,0,0,0]
+    },
+    {
+        "id": 5,
+        "question": "¿Te sirven vales?",
+        "character": "C3",
+        "optionYes": "Ya que",
+        "optionNo": "Nope",
+        "childrenYes": [0],
+        "childrenNo": [0],
+        "effectYes": [0,0,0,0],
+        "effectNo": [0,0,0,0]
+    },
+    {
+        "id": 6,
+        "question": "¿Entonces? ¿Paz?",
+        "character": "C3",
+        "optionYes": "Estaría Bien",
+        "optionNo": "Quiero la guerra",
+        "childrenYes": [0],
+        "childrenNo": [0],
+        "effectYes": [0,0,0,0],
+        "effectNo": [0,0,0,0]
+    }
+]

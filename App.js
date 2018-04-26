@@ -20,8 +20,9 @@ import {
   Button
 } from 'react-native';
 
-import { DecisionTree } from './src/core/decisionTree';
-import {DATA} from './src/Views/CardView.js'
+import { DecisionGraph } from './src/core/decisionGraph';
+import {DATA, current} from './src/Views/CardView.js'
+import { GameManager } from './src/core/gameManager';
 
 
 export default class App extends Component {
@@ -32,6 +33,12 @@ export default class App extends Component {
       viewId: 0,
       musicVolume: 80
     };
+
+    game = new GameManager()
+    first = game.decisionGraph.currentNode.getData()
+    DATA[0].text = first.text
+    DATA[0].leftText = first.leftText
+    DATA[0].rightText = first.rightText
   }
 
   render() {
@@ -72,11 +79,14 @@ export default class App extends Component {
   renderCardView(){
     return (
       <CardView
+        ref = {component => this._CardView = component}
         onSwipeRight = {() => {
-          
+          game.nextCard(DATA, true)
+          this._CardView.setState({question: current.text})
         }}
         onSwipeLeft = {() => {
-
+          game.nextCard(DATA, false)
+          this._CardView.setState({question: current.text})
         }}
       />
     );

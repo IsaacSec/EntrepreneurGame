@@ -11,29 +11,27 @@ class DecisionNode {
     this.effectNo = [0, 0, 0, 0]
   }
 
-  getRandomChild(isYes) {
-    let branches
-
-    if (isYes === true) {
-      branches = childYes
-    } else {
-      branches = childNo
+  getData() {
+    let data = {
+      id: this.id,
+      text: this.question,
+      leftText: this.optionYes,
+      rightText: this.optionNo
     }
 
-    let max = branches.length
-    let index = Math.floor(Math.random() * max)
-
-    return branches[index]
+    return data
   }
 
   static genNodeFromJSON(json) {
     var node = new DecisionNode()
-
+    
     node.id = json.id
     node.question = json.question
     node.character = json.character
     node.optionYes = json.optionYes
-    node.optionNo = json.childrenYes
+    node.optionNo = json.optionNo
+    node.childrenYes = json.childrenYes
+    node.childrenNo = json.childrenNo 
     node.effectYes = json.effectYes
     node.effectNo = json.effectNo
 
