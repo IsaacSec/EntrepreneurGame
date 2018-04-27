@@ -8,7 +8,8 @@ import {
   UIManager,
   Text,
   Button,
-  Image
+  Image,
+  ImageBackground
 } from 'react-native'
 
 const SCREEN_WIDTH = Dimensions.get('window').width
@@ -124,7 +125,7 @@ class Deck extends Component {
               }}>
               <Image
                 source={require('../res/images/zona-ei.png')}
-                style={{ width: 200, height: 200, opacity: 0.25 }}
+                style={{ width: 200, height: 200, opacity: 0.40 }}
               />
             </View>
           )
@@ -159,31 +160,22 @@ class Deck extends Component {
                 height: width,
                 margin,
                 backgroundColor: 'white',
-                borderRadius: 10,
-                overflow: 'hidden',
-                backgroundColor: 'gray'
+                backgroundColor: 'gray',
+                borderRadius: 10 // TODO fix overflow hidden
               }}
               key={item.id}
               title={item.text}
               image={{ uri: item.uri }}>
-              <View
+              <ImageBackground
                 style={{
+                  flex: 1,
                   display: 'flex',
                   flexDirection: 'row',
                   justifyContent: 'space-between',
-                  position: 'relative',
-                  backgroundColor: 'gray'
-                }}>
-                <Image
-                  source={require('../res/images/1.png')}
-                  style={{
-                    width: width,
-                    height: width,
-                    position: 'absolute',
-                    top: 0,
-                    left: 0
-                  }}
-                />
+                  borderRadius: 10 // TODO fix overflow hidden 
+                }}
+                source={require('../res/images/1.png')}
+                >
                 <Animated.View
                   style={{ opacity: this.rightOpacity, margin: 20 }}>
                   <Text
@@ -212,7 +204,7 @@ class Deck extends Component {
                     {item.rightText}
                   </Text>
                 </Animated.View>
-              </View>
+              </ImageBackground>
             </View>
           </Animated.View>
         )}
