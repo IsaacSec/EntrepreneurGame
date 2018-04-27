@@ -8,6 +8,7 @@ import React, { Component } from 'react'
 import { Platform, StyleSheet, Text, View } from 'react-native'
 import { Card, Button } from 'react-native-elements'
 import Deck from '../deck'
+import { GameRun } from '../core/gameRun';
 
 var DATA = [
   {
@@ -31,13 +32,18 @@ var DATA = [
 ]
 
 var current = DATA[0]
+var RUN = new GameRun();
 
 type Props = {}
 export default class CardView extends Component<Props> {
   constructor(props) {
     super(props)
     this.state = {
-      question: current.text
+      question: current.text,
+      p0: RUN.powers[0].currentValue,
+      p1: RUN.powers[1].currentValue,
+      p2: RUN.powers[2].currentValue,
+      p3: RUN.powers[3].currentValue
     }
   }
 
@@ -95,7 +101,7 @@ export default class CardView extends Component<Props> {
                 marginBottom: 10
               }}
             />
-            <Text style={{ color: 'white', fontWeight: '700' }}>{1234}</Text>
+            <Text style={{ color: 'white', fontWeight: '700' }}>{this.state.p0}</Text>
           </View>
           <View
             style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -107,7 +113,7 @@ export default class CardView extends Component<Props> {
                 marginBottom: 10
               }}
             />
-            <Text style={{ color: 'white', fontWeight: '700' }}>{1234}</Text>
+            <Text style={{ color: 'white', fontWeight: '700' }}>{this.state.p1}</Text>
           </View>
           <View
             style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -119,7 +125,7 @@ export default class CardView extends Component<Props> {
                 marginBottom: 10
               }}
             />
-            <Text style={{ color: 'white', fontWeight: '700' }}>{1234}</Text>
+            <Text style={{ color: 'white', fontWeight: '700' }}>{this.state.p2}</Text>
           </View>
           <View
             style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -131,7 +137,7 @@ export default class CardView extends Component<Props> {
                 marginBottom: 10
               }}
             />
-            <Text style={{ color: 'white', fontWeight: '700' }}>{1234}</Text>
+            <Text style={{ color: 'white', fontWeight: '700' }}>{this.state.p3}</Text>
           </View>
         </View>
         <View
@@ -169,4 +175,4 @@ const styles = StyleSheet.create({
   }
 })
 
-export { DATA, current }
+export { DATA, current, RUN }

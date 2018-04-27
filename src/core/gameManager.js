@@ -1,10 +1,10 @@
 import { GameRun } from './gameRun'
 import { DecisionGraph } from './decisionGraph'
-import { DATA, current } from '../Views/CardView'
+import { DATA, current, RUN } from '../Views/CardView'
 
 class GameManager {
   constructor() {
-    this.currentGameRun = new GameRun()
+    this.currentGameRun = RUN
     this.decisionGraph = DecisionGraph.loadGraphFromJSON()
     this.resources = require('./../../settings/resources-0.0.1.json')
     this.offset = DATA.length - 1
@@ -21,6 +21,21 @@ class GameManager {
     }
     _DATA.push(empty)
 
+    var effects = []; 
+    if (isYes){
+      effects = this.decisionGraph.currentNode.effectYes;
+    } else {
+      effects = this.decisionGraph.currentNode.effectNo;
+    }
+
+    console.log("Effects", effects)
+
+    RUN.cardsPassed += 1
+    RUN.powers[0].currentValue += effects[0]
+    RUN.powers[1].currentValue += effects[1]
+    RUN.powers[2].currentValue += effects[2]
+    RUN.powers[3].currentValue += effects[3]
+
     let next = this.decisionGraph.getRandomChild(isYes)
     this.decisionGraph.currentNode = next
     let data = next.getData()
@@ -32,8 +47,8 @@ class GameManager {
 
     current.text = data.text
 
-    console.log("New Data", _DATA)
-    console.log("next: "+nextId+" toReplace: "+toReplace)
+    //console.log("New Data", _DATA)
+    //console.log("next: "+nextId+" toReplace: "+toReplace)
   }
 }
 

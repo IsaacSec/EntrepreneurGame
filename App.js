@@ -83,6 +83,15 @@ export default class App extends Component {
         onSwipeRight = {() => {
           game.nextCard(DATA, true)
           this._CardView.setState({question: current.text})
+
+          
+
+          this._CardView.setState({
+            p0: game.currentGameRun.powers[0].currentValue,
+            p1: game.currentGameRun.powers[1].currentValue,
+            p2: game.currentGameRun.powers[2].currentValue,
+            p3: game.currentGameRun.powers[3].currentValue
+          });
         }}
         onSwipeLeft = {() => {
           game.nextCard(DATA, false)
